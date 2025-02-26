@@ -1,0 +1,37 @@
+.Header {
+    //margin-bottom: 25px;
+    background-color: transparent !important;
+    margin-bottom: 3.5rem;
+
+  
+    button {
+      text-transform: none !important;
+      
+      &:before {
+        content: '';
+        background: #CA182E;
+        
+        display: block;
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        transition: width 0.4s ease-in-out;
+      
+      }
+  
+      &:hover {
+        background-position: 0;
+      }
+  
+      &:hover::before {
+        width: 100%;
+      }
+    }
+  
+    svg{
+      fill: white;
+    }
+  }
+  

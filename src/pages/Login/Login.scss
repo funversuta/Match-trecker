@@ -1,0 +1,24 @@
+.loginPage {
+    background-color: var(--bg-default);
+    color: var(--typo-primary);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+
+    .MuiBox-root{
+        width: fit-content;
+        
+    }
+  
+    .err{
+      color: red;
+      max-width: 15rem;
+      text-align: center;
+    }
+  
+    &__form {
+      background: var(--color-primary);
+    }
+  }
