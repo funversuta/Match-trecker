@@ -11,6 +11,23 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --bg-default: #242731;
+  --bg-primary: #353859;
+  --bg-light: #FFFFFF;
+
+  --bg-table-header: #F1F3F9;
+
+
+  --bg-primary-light: #4068E7;
+  --grey-light: rgba(168, 168, 168, 0.25);
+
+  --box-shadow-light: rgba(212, 216, 222, 0.2);
+
+  --color-primary: #FFFFFF;
+  --text-dark: #333333;
+
+  --disabled-color: #C5C5C5;
 }
 
 a {

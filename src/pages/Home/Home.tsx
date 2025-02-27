@@ -3,6 +3,7 @@ import reactLogo from "../../assets/react.svg";
 import viteLogo from "/vite.svg";
 import { Header } from "../../components/Header/Header";
 import "./Home.scss";
+import { useTheme } from "../../Context/ThemeContext/ThemeUtils";
 
 interface HomeProps {
   name?: string;
@@ -10,9 +11,10 @@ interface HomeProps {
 
 export const Home: FC<HomeProps> = () => {
   const [count, setCount] = useState(0);
+  const {isDarkTheme} =useTheme();
 
   return (
-    <div className="Home">
+    <div className={`Home ${isDarkTheme ? 'dark-theme' : 'light-theme'}`}>
       <Header />
       <div className="content">
         {" "}

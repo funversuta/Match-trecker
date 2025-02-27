@@ -4,6 +4,7 @@ import { Box, Button, Stack, TextField } from '@mui/material';
 import { useAuth } from '../../Context/AuthContext/authUtils';
 import Loader from '../../components/Loader/Loader';
 import './Login.scss'
+import { useTheme } from '../../Context/ThemeContext/ThemeUtils';
 
 interface LoginProps {
   name?:string;
@@ -14,6 +15,7 @@ export const Login: FC<LoginProps> = () => {
   const { error, loading, login } = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const {isDarkTheme} = useTheme();
 
   const authorize = async () => {
     const response = await login({ username, password });
@@ -23,7 +25,7 @@ export const Login: FC<LoginProps> = () => {
   };
 
     return (
-      <div className={`loginPage`}>
+      <div className={`loginPage ${isDarkTheme ? 'dark-theme' : 'light-theme'}`}>
       <Loader visible={loading} />
       <Box>
         <Stack
@@ -47,8 +49,7 @@ export const Login: FC<LoginProps> = () => {
           ></TextField>
 
           {error && (
-            <div className="err">Пользователь с такими данными не найден. Проверьте логин и пароль</div>
-            //Пользователь с такими данными не найден. Проверьте логин и пароль
+            <div className="err">Пользователь с такими данными не найден.<br/> Проверьте логин и пароль</div>
           )}
 
           <Button role="button" variant="contained" disabled={loading} onClick={authorize}>

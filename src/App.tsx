@@ -7,6 +7,8 @@ import { useAuth } from "./Context/AuthContext/authUtils";
 import { ReactNode } from "react";
 import { Login } from "./pages/Login/Login";
 import { Home } from "./pages/Home/Home";
+import { ThemeProvider } from "./Context/ThemeContext/ThemeContext";
+
 
 type Props = {
   children: ReactNode;
@@ -39,17 +41,19 @@ function App() {
     <>
       <BrowserRouter>
         <AuthProvider>
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route
-              path="/"
-              element={
-                <PrivateRoute>
-                  <Home />
-                </PrivateRoute>
-              }
-            />
-          </Routes>
+          <ThemeProvider>
+            <Routes>
+              <Route path="/login" element={<Login />} />
+              <Route
+                path="/"
+                element={
+                  <PrivateRoute>
+                    <Home />
+                  </PrivateRoute>
+                }
+              />
+            </Routes>
+          </ThemeProvider>
         </AuthProvider>
       </BrowserRouter>
     </>
