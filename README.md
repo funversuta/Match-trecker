@@ -1,13 +1,6 @@
-# Шаблон для разработки React + TypeScript + Vite, MUI 
+# Match Tracker на react, vite, ts
 
-В сборке: Темная-светлая тема, авторизация jwt(без регистрации). 
+## https://www.figma.com/design/W16WfB86EgqtcuuqLCYjgF/Test-assignment?node-id=72-208&t=9s04HzwbraMSQFvS-0
 
-Material ui, axios для запросов, настроен safeFetch в который оборачивается каждый запрос, подставляется токен авторизация, заголовки(самые базовые).
-
-## Для работы 
-
-npm i, npm run dev, создать env с переменной для сборки(актуальный ip/url)можно создать .env.local что бы иметь 2 версии для разработки(env.local) и для продакшин версии(env)/ Переменные должны быть использованы в Services/api/api.ts host переменная. Стейт менеджер установить при необходимости на ваш выбор
-
-
-### Для тестирования использовать vitest, доустановить React Testing Library
+### https://docs.google.com/document/d/1TO9k9aKPClI5ms2vJmCeChIgXLTpMF0C9fs4kZa9bQk/edit?tab=t.0
 

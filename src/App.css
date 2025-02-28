@@ -1,16 +1,23 @@
 @font-face {
-  font-family: 'Montserrat';
+  font-family: 'Tactic Sans';
   font-style: normal;
-  font-weight: 400;
   src: local(''),
-       url('./assets/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+       url('./assets/tactic-sans/TacticSans-Reg.woff2') format('woff2'),
+       url('./assets/tactic-sans/TacticSans-Reg.woff') format('woff'),
+       url('./assets/tactic-sans/TacticSans-Reg.ttf') format('truetype'),
+}
+
+@font-face {
+  font-family: 'Tactic Sans italic';
+  font-style: italic;
+
+  src: local(''),
+       url('./assets/tactic-sans/TacticSans-Bldit.woff2') format('woff2'),
+       url('./assets/tactic-sans/TacticSans-Bldit.woff') format('woff'),
+       url('./assets/tactic-sans/TacticSans-Bldit.ttf') format('truetype'),
 }
 
 #root {
   text-align: center;
-  font-family: 'Montserrat', sans-serif; /* Добавлено использование шрифта */
-}
-
-body {
-  margin: 0; /* Убедитесь, что нет отступов по умолчанию */
+  font-family: 'Tactic Sans', 'Times New Roman', 'Inter',  Times, serif;
 }

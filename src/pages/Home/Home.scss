@@ -1,19 +1,107 @@
-.Home{
-    width: 100vw;
-    min-height: 100vh;
-    position: relative;
+.home {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  padding: 2.2vw;
+  background-color: rgba(6, 8, 12, 1);
 
-    &.light-theme{
-        background-color: #F5F5F5;
+  &__title {
+    font-family: "Tactic Sans italic";
+    font-size: 32px;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btn-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__err {
+    background-color: rgba(15, 19, 24, 1);
+    padding: 14px 24px;
+    border-radius: 4px;
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 40px;
+    background-color: rgba(235, 2, 55, 1);
+    border-radius: 4px;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21.78px;
+    cursor: pointer;
+    border: none;
+
+    &:disabled {
+      svg {
+        opacity: 0.5;
+      }
     }
-    &.dark-theme{
-        background-color: #1F2128;
+    &:active {
+      background-color: rgba(160, 17, 49, 1);
     }
-    
-    
-    .content{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vw;
+    margin-top: 1vw;
+  }
+
+  &__card {
+    background-color: rgba(11, 14, 18, 1);
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 4px;
+    align-items: center;
+    font-family: "Inter";
+    font-weight: 600;
+
+    &-command {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 16px;
     }
+
+    &-bill {
+      font-size: 20px;
+    }
+
+    &-status {
+      font-size: 12px;
+      padding: 8px 21px;
+      border-radius: 4px;
+      line-height: 14.52px;
+
+      &.Ongoing {
+        background-color: rgba(67, 173, 40, 1);
+      }
+      &.Finished {
+        background-color: rgba(235, 2, 55, 1);
+      }
+      &.Scheduled {
+        background-color: rgba(235, 100, 2, 1);
+      }
+    }
+  }
 }
