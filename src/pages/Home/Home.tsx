@@ -5,6 +5,7 @@ import Refresh from "../../assets/icons/Refresh.svg?react";
 import Team from "../../assets/icons/team.svg?react";
 import Alert from "../../assets/icons/alert-triangle.svg?react";
 import { Match, Root } from "../../Interfaces/Fronttemp";
+import Loader from "../../components/Loader/Loader";
 
 interface HomeProps {
   name?: string;
@@ -54,6 +55,7 @@ export const Home: FC<HomeProps> = () => {
 
   return (
     <section className={`home`}>
+     
       <div className="home__head">
         <div className="home__title">Match Tracker</div>
 
@@ -69,6 +71,7 @@ export const Home: FC<HomeProps> = () => {
         </div>
       </div>
       <div className="home__content">
+      <Loader visible={loading} />
         {matches?.map((match: Match) => {
           return (
             <div className="home__card" key={match.time}>
