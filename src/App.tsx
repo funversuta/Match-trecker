@@ -1,4 +1,3 @@
-// import { ReactNode } from 'react';
 import "./App.css";
 import { Route, Routes, BrowserRouter, Navigate } from "react-router";
 
@@ -8,6 +7,7 @@ import { ReactNode } from "react";
 import { Login } from "./pages/Login/Login";
 import { Home } from "./pages/Home/Home";
 import { ThemeProvider } from "./Context/ThemeContext/ThemeContext";
+import { Profile } from "./pages/Profile/Profile";
 
 
 type Props = {
@@ -49,6 +49,14 @@ function App() {
                 element={
                   <PrivateRoute>
                     <Home />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/profile"
+                element={
+                  <PrivateRoute>
+                    <Profile />
                   </PrivateRoute>
                 }
               />

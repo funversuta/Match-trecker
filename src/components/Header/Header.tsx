@@ -1,16 +1,12 @@
 import { FC } from "react";
 import "./Header.scss";
-import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
 import background from "../../assets/images/background.jpg";
 import { useAuth } from "../../Context/AuthContext/authUtils";
 import { useTheme } from "../../Context/ThemeContext/ThemeUtils";
@@ -18,6 +14,7 @@ import { Button } from "@mui/material";
 import OutIcon from "../../assets/icons/Icon.svg?react";
 import "@theme-toggles/react/css/Classic.css";
 import { Classic } from "@theme-toggles/react";
+import { useNavigate } from "react-router";
 
 interface HeaderProps {
   name?: string;
@@ -28,28 +25,20 @@ export const Header: FC<HeaderProps> = () => {
   // const navigate = useNavigate();
   const { isDarkTheme, toggleTheme } = useTheme();
   const user = "Лаптев Никита Васильевич";
-  const menuUser = `${isDarkTheme ? "Светлая тема" : "Тёмная тема"}`;
   const getInitials = () => {
     const fio = user.split(" ");
     return fio[0][0] + fio[1][0];
   };
   const userFILogo = getInitials();
+  const navigate = useNavigate();
 
   const logoutHandler = () => {
     logout();
   };
 
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null
-  );
-
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  const showProfile = () =>{
+    navigate('/');
+  }
 
   return (
     <AppBar
@@ -70,7 +59,7 @@ export const Header: FC<HeaderProps> = () => {
             <Tooltip title="Open settings">
               <IconButton
                 className="userBtn"
-                onClick={handleOpenUserMenu}
+                onClick={showProfile}
                 sx={{ p: 0 }}
               >
                 <Avatar alt="Remy Sharp" src={background} />{" "}
@@ -78,28 +67,7 @@ export const Header: FC<HeaderProps> = () => {
               </IconButton>
             </Tooltip>
 
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              <MenuItem key={menuUser} onClick={handleCloseUserMenu}>
-                <Typography sx={{ textAlign: "center" }} onClick={toggleTheme}>
-                  {menuUser}
-                </Typography>
-              </MenuItem>
-            </Menu>
+
 
             <div className="Header__User">
               <span>{user}</span>
