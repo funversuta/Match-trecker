@@ -46,6 +46,24 @@
     line-height: 21.78px;
     cursor: pointer;
     border: none;
+    transition: 0.3s opacity ease-in-out;
+
+    &:hover{
+      opacity: 0.75;
+      .rotate {
+        animation: rotate 2s linear infinite;
+        transform-origin: center;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(360deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+    }
 
     &:disabled {
       svg {

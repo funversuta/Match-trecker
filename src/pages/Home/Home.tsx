@@ -66,7 +66,7 @@ export const Home: FC<HomeProps> = () => {
             </div>
           )}
           <button disabled={loading} className="home__btn" onClick={updateData}>
-            Обновить <Refresh />
+            Обновить <Refresh className="rotate" />
           </button>
         </div>
       </div>
